@@ -1,0 +1,53 @@
+{
+  "criteria": {
+    "got_hazmat": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "cnana:hazmat_helmet"
+            ]
+          },
+          {
+            "items": [
+              "cnana:hazmat_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "cnana:hazmat_leggins"
+            ]
+          },
+          {
+            "items": [
+              "cnana:hazmat_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:",
+    "description": {
+      "translate": "advancements.cnana.full_hazmat_equipped.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "cnana:hazmat_helmet"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.cnana.full_hazmat_equipped.title"
+    }
+  },
+  "requirements": [
+    [
+      "got_hazmat"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

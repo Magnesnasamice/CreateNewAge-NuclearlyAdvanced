@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "cnana:block/reactor_control_panel"
+    },
+    "facing=south": {
+      "model": "cnana:block/reactor_control_panel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "cnana:block/reactor_control_panel",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "cnana:block/reactor_control_panel",
+      "y": 90
+    },
+    "facing=down": {
+      "model": "cnana:block/reactor_control_panel"
+    },
+    "facing=up": {
+      "model": "cnana:block/reactor_control_panel"
+    }
+  }
+}

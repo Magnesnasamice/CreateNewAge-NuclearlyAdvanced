@@ -1,0 +1,14 @@
+{
+  "itemgroup.creative_tab": "CNA: Nuclearly Advanced",
+  "item.cna_nuclearly_advanced.cold_water_bucket": "Wiadro zimnej wody",
+  "block.cna_nuclearly_advanced.cold_water_block": "Zimna woda",
+
+  "item.cna_nuclearly_advanced.hazmat_helmet": "Hełm Hazmatu",
+  "item.cna_nuclearly_advanced.hazmat_chestplate": "Napierśnik Hazmatu",
+  "item.cna_nuclearly_advanced.hazmat_leggins": "Nogawice Hazmatu",
+  "item.cna_nuclearly_advanced.hazmat_boots": "Buty Hazmatu",
+  "advancements.cna_nuclearly_advanced.full_hazmat_equipped.title": "Uciekaj promieniowanie!",
+  "advancements.cna_nuclearly_advanced.full_hazmat_equipped.description": "Zdobądź wszystkie części stroju Hazmat",
+
+  "effect.cna_nuclearly_advanced.radioactive": "Bezpieczny od promieniowania"
+}

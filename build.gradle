@@ -1,0 +1,120 @@
+plugins {
+	id 'fabric-loom' version '1.5-SNAPSHOT'
+	id 'maven-publish'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+	archivesName = project.archives_base_name
+}
+
+repositories {
+	// quilt mappings
+	//maven { url = "https://maven.quiltmc.org/repository/release" }
+	// create
+	maven { url = 'https://maven.tterrag.com/' }
+	// JEI
+	maven { url = "https://maven.blamejared.com/" }
+	// curios
+	maven { url = "https://maven.theillusivec4.top/" }
+	// cc tweaked
+	maven { url = "https://squiddev.cc/maven/" }
+	// trinkets
+	maven {
+		name = "TerraformersMC"
+		url = "https://maven.terraformersmc.com/"
+	}
+	// trinkets
+	maven {
+		name = "Ladysnake Libs"
+		url = 'https://maven.ladysnake.org/releases'
+	}
+}
+
+loom {
+	mods {
+		"cna_nuclearly_advanced" {
+			sourceSet sourceSets.main
+		}
+	}
+}
+
+
+fabricApi {
+	configureDataGeneration()
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+
+	// ------- fabric loader and API ------- // WORKING
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+	// ------- create ------- // WORKING
+	modImplementation "com.simibubi.create:create-${create_minecraft_version}:${create_version}:slim"
+//	modImplementation "com.jozufozu.flywheel:flywheel-fabric-${flywheel_minecraft_version}:${flywheel_version}"
+//	modImplementation "com.tterrag.registrate:Registrate:${registrate_version}"
+
+	// ------- trinkets ------- // WORKING
+	modImplementation "dev.emi:trinkets:${trinkets_version}"
+
+	// ------- JEI ------- // WORKING
+//	modCompileOnlyApi("mezz.jei:jei-${jei_minecraft_version}-common-api:${jei_version}")
+//	modCompileOnlyApi("mezz.jei:jei-${jei_minecraft_version}-fabric-api:${jei_version}")
+//	runtimeOnly("mezz.jei:jei-${jei_minecraft_version}-fabric:${jei_version}")
+
+	// ------- CURIOS ------- // NOT WORKING
+//	modImplementation "top.theillusivec4.curios:curios-fabric:${curios_version}"
+
+	// ------- CC TWEAKED FORGE ------- // WORKING
+//	modImplementation "cc.tweaked:cc-tweaked-${cc_tweaked_minecraft_version}-forge:${cc_tweaked_version}"
+}
+
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": project.version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 17
+}
+
+java {
+	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
+	// if it is present.
+	// If you remove this line, sources will not be generated.
+	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+	from("LICENSE") {
+		rename { "${it}_${project.base.archivesName.get()}"}
+	}
+}
+
+// configure the maven publication
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
+
+	// See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
+	repositories {
+		// Add repositories to publish to here.
+		// Notice: This block does NOT have the same function as the block in the top level.
+		// The repositories here will be used for publishing your artifact, not for
+		// retrieving dependencies.
+	}
+}

@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "cnana",
+	"version": "${version}",
+	"name": "Create New Age: Nuclearly Advanced",
+	"description": "Addon for Create: New Age that brings more advanced and powerful nuclear power",
+	"authors": [
+		"magnesnasamice"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/project/create-new-nuclearly-advanced",
+		"sources": "https://modrinth.com/project/create-new-nuclearly-advanced"
+	},
+	"license": "MIT",
+	"icon": "assets/cnana/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.magnesnasamice.cnana.foundation.Init"
+		],
+		"client": [
+			"com.magnesnasamice.cnana.foundation.InitClient"
+		],
+		"fabric-datagen": [
+			"com.magnesnasamice.cnana.foundation.InitDatagen"
+		]
+	},
+	"mixins": [
+		"cnana.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+
+		"create": ">=0.5.1-f",
+		"trinkets": ">=3.7.2"
+	}
+}

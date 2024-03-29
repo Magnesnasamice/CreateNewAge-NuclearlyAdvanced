@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "create_new_age_advanced_nuclear:cold_water",
+    "create_new_age_advanced_nuclear:flowing_cold_water"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "itemgroup.creative_tab": "CNA: Nuclearly Advanced",
+  "item.cnana.cold_water_bucket": "Cold Water Bucket",
+  "block.cnana.cold_water_block": "Cold Water",
+
+  "item.cnana.hazmat_helmet": "Hazmat Helmet",
+  "item.cnana.hazmat_chestplate": "Hazmat Suit",
+  "item.cnana.hazmat_leggins": "Hazmat Pants",
+  "item.cnana.hazmat_boots": "Hazmat Boots",
+  "advancements.cnana.full_hazmat_equipped.title": "Shoo radiation!",
+  "advancements.cnana.full_hazmat_equipped.description": "Get a full suit of Hazmat",
+
+  "item.cnana.hazmat_breathe_filter": "Breathe Filter",
+
+  "block.cnana.reactor_control_panel": "Control Panel",
+
+  "effect.cnana.radioactive": "Radiation safe",
+
+  "key.category.cnana.main": "CNA: Nuclearly Advanced",
+  "key.cnana.radiation_increment": "Increment Radiation",
+  "key.cnana.radiation_decrement": "Decrement Radiation",
+
+  "item.cnana.uranium": "Uranium",
+  "block.cnana.uranium_ore": "Uranium Ore",
+  "message.cnana.radiation_show": "radiation level is now %d"
+}
