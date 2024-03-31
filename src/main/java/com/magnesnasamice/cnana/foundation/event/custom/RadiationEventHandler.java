@@ -41,14 +41,13 @@ public class RadiationEventHandler {
             elapsedTicks++;
         });
 
-        // ON WORLD JOIN SYNC
+        // ON PLAYER JOINED WORLD -> SYNC
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
             PlayerData playerState = StateDataManager.getPlayerState(handler.getPlayer());
             PacketByteBuf data = PacketByteBufs.create();
             data.writeInt(playerState.radiationPercent);
             server.execute(() -> {
-                ServerPlayNetworking.send(handler.getPlayer(), RADIATION_INIT_SYNC, data); // retrieve data
-                handler.getPlayer().sendMessage(Text.literal("init sync!"));
+                ServerPlayNetworking.send(handler.getPlayer(), RADIATION_INIT_SYNC, data); // initial sync
             });
         });
 

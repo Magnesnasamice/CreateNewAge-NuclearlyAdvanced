@@ -2,6 +2,7 @@ package com.magnesnasamice.cnana.foundation;
 
 import com.magnesnasamice.cnana.foundation.block.ModBlockEntities;
 import com.magnesnasamice.cnana.foundation.block.ModBlocks;
+import com.magnesnasamice.cnana.foundation.damage.ModDamageTypes;
 import com.magnesnasamice.cnana.foundation.effect.ModEffects;
 import com.magnesnasamice.cnana.foundation.event.ModEvents;
 import com.magnesnasamice.cnana.foundation.fluid.ModFluids;
@@ -29,6 +30,7 @@ public class Init implements ModInitializer {
 		ModEffects.register();
 
 		ModEvents.register();
+		ModDamageTypes.register();
 		ModPackets.registerC2SPackets(); // client to server packets
 	}
 }

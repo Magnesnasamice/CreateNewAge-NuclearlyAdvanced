@@ -22,5 +22,9 @@
 
   "item.cnana.uranium": "Uranium",
   "block.cnana.uranium_ore": "Uranium Ore",
-  "message.cnana.radiation_show": "radiation level is now %d"
+  "message.cnana.radiation_show": "radiation level is now %d",
+
+  "death.attack.radiation": "%1$s died from excessive radiation exposure!",
+
+  "item.cnana.hazmat_breathe_filter.tooltip": "You need to have this in you face trinket slot to breathe while wearing hazmat helmet"
 }

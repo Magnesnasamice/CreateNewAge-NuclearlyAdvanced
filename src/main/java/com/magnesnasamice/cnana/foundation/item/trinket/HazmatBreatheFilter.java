@@ -3,11 +3,16 @@ package com.magnesnasamice.cnana.foundation.item.trinket;
 import com.google.common.collect.Multimap;
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketItem;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
 import java.util.UUID;
 
 public class HazmatBreatheFilter extends TrinketItem {
@@ -21,5 +26,10 @@ public class HazmatBreatheFilter extends TrinketItem {
         // SlotAttributes.addSlotModifier(modifiers, "head/face", uuid, 1, EntityAttributeModifier.Operation.ADDITION);
 
         return super.getModifiers(stack, slot, entity, uuid);
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("item.cnana.hazmat_breathe_filter.tooltip"));
     }
 }

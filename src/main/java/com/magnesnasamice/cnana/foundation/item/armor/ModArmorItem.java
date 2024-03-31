@@ -66,9 +66,6 @@ public class ModArmorItem extends ArmorItem {
         ArmorItem leggins = ((ArmorItem) player.getInventory().getArmorStack(2).getItem());
         ArmorItem boots = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
 
-        // TrinketComponent tc = TrinketsApi.getTrinketComponent(player).get();
-        // tc.isEquipped(ModItems.HAZMAT_BREATHE_FILTER);
-
         return helmet.getMaterial() == material && chestplate.getMaterial() == material
                 && leggins.getMaterial() == material && boots.getMaterial() == material;
     }
